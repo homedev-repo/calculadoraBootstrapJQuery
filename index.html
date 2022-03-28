@@ -42,7 +42,7 @@
         <hr>
 
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" id="btnCalcular">Calcular</button>
+            <button type="button" class="btn btn-primary" onclick="calcularResultado()">Calcular</button>
         </div>
 
         <hr>
@@ -55,23 +55,16 @@
 
 
     <script>
-        $(document).ready(function () {
-            //Sempre que a página ser aberta ou recarregada o valor do resultado será 0
-            $('#inpResultado').val(0)
-
-            //Função que calcula o valor dos dois inputs
-            $('#btnCalcular').click(function () {
-                var num1 = parseFloat($('#inpNumber1').val())
-                var num2 = parseFloat($('#inpNumber2').val())
-                var resu = num1 + num2
-
-                //isNaN é uma função que retorna true se o valor referenciado ser NaN
-                if (isNaN(resu) == false)
-                    $('#inpResultado').val(resu)
-                else
-                    $('#inpResultado').val(0)
-            })
-        })
+        function calcularResultado() {         
+            var num1 = parseFloat($('#inpNumber1').val())
+            var num2 = parseFloat($('#inpNumber2').val())
+            var resu = num1 + num2
+            //isNaN é uma função que retorna true se o valor referenciado ser NaN
+            if (isNaN(resu) == false)
+                $('#inpResultado').val(resu)
+            else
+                $('#inpResultado').val(0)
+        }
     </script>
 
 </body>
