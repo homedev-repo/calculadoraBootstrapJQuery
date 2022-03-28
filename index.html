@@ -42,7 +42,7 @@
         <hr>
 
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" onclick="calcularResultado()">Calcular</button>
+            <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
         </div>
 
         <hr>
@@ -55,7 +55,11 @@
 
 
     <script>
-        function calcularResultado() {         
+        //Sempre que a página ser recarregada ou aberta o valor deste input será 0
+        $('#inpResultado').val(0)
+
+        //Função para calcular o valor dos dois inputs
+        function calcular() {
             var num1 = parseFloat($('#inpNumber1').val())
             var num2 = parseFloat($('#inpNumber2').val())
             var resu = num1 + num2
